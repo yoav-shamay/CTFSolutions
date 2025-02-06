@@ -38,7 +38,6 @@ def write_text(text, address, al_start):
     cur = address
     al = al_start
     for char in text:
-        #little endian - lower first
         address = next(elf.search(int.to_bytes(char)))
         payload += read_to_al(al, address)
         al = char
